@@ -26,8 +26,8 @@ function withRedux(component, store) {
 export function renderWithRouter(
   component,
   {
-    initialPath = '/',
-    history = createMemoryHistory([initialPath]),
+    initialEntries = ['/'],
+    history = createMemoryHistory({ initialEntries }),
   } = {},
 ) {
   return {
@@ -52,8 +52,8 @@ export function renderWithRedux(component, options = {}) {
 
 export function renderWithRouterAndRedux(component, options = {}) {
   const {
-    initialPath = '/',
-    history = createMemoryHistory([initialPath]),
+    initialEntries = ['/'],
+    history = createMemoryHistory({ initialEntries }),
   } = options;
 
   return {
