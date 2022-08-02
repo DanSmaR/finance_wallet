@@ -66,7 +66,7 @@ describe('Testing the Login page', () => {
 
     // afterEach(() => jest.clearAllMocks());
 
-    it('should be able to submit after fill in the form', async () => {
+    it('should be able to submit after fill in the form', () => {
       const { history } = renderWithRouterAndRedux(<App />, {
         initialState,
       });
@@ -74,9 +74,7 @@ describe('Testing the Login page', () => {
       userEvent.type(getEmailInput(), emailValid);
       userEvent.type(getPasswordINput(), passwordValid);
       userEvent.click(getSubmitBtn());
-      await waitFor(() => {
-        expect(history.location.pathname).toEqual('/carteira');
-      });
+      expect(history.location.pathname).toEqual('/carteira');
       // screen.logTestingPlaygroundURL();
     });
   });
