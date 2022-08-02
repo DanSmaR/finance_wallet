@@ -128,7 +128,7 @@ describe('Testing the table component and functionalities', () => {
     beforeEach(async () => {
       global.fetch = jest.fn().mockResolvedValueOnce({
         json: jest.fn().mockResolvedValue(mockData),
-      }).mockRejectedValueOnce(new Error('Request Failure'))
+      }).mockRejectedValue(new Error('Request Failure'))
     
       renderWithRedux(<Wallet />, {
         emptyInitialStateAfterLogin,
