@@ -166,4 +166,24 @@ describe('Testing the Wallet page', () => {
       });
     });
   });
+
+  describe('Testing the url pathname', () => {
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
+    it('should the url pathname to be "/carteira', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        json: jest.fn().mockResolvedValue(mockData),
+      });
+      const { history } = renderWithRouterAndRedux(<Wallet />, {
+        initialState,
+        initialEntries,
+      });
+
+      await waitFor(() => expect(global.fetch).toHaveBeenCalled());
+
+      expect(history.location.pathname).toBe('/carteira');
+    });
+  });
 });
