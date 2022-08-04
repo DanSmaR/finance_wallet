@@ -7,6 +7,8 @@ export const passwordInvalidList = ['', '12345'];
 
 const currenciesOptions = Object.keys(mockData).filter((key) => key !== 'USDT');
 
+export const initialEntries = ['/carteira'];
+
 export const initialState = {
   user: {
     email: emailValid,
