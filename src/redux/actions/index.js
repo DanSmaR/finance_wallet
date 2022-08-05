@@ -1,17 +1,8 @@
 // Coloque aqui suas actions
+import { actionTypes } from "../actionTypes";
+
 const URL = 'https://economia.awesomeapi.com.br/json/all';
 let ID = 0;
-
-export const actionTypes = {
-  LOGIN: 'LOGIN',
-  DELETE_EXPENSE: 'DELETE_EXPENSE',
-  ENABLE_EDIT_EXPENSE: 'ENABLE_EDIT_EXPENSE',
-  EDIT_EXPENSE: 'EDIT_EXPENSE',
-  FETCH_CURRENCY_REQUEST: 'FETCH_CURRENCY_REQUEST',
-  FETCH_CURRENCY_SUCCESS: 'FETCH_CURRENCY_SUCCESS',
-  FETCH_CURRENCY_SUCCESS_EXPENSE: 'FETCH_CURRENCY_SUCCESS_EXPENSE',
-  FETCH_CURRENCY_FAILURE: 'FETCH_CURRENCY_FAILURE',
-};
 
 export const executeLogin = (email) => ({
   type: actionTypes.LOGIN,
